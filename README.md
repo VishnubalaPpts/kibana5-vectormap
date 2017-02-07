@@ -1,21 +1,14 @@
 # Kibana Vector Map Plugin
-A Vector Map Plugin for Kibana 4
+A Vector Map Plugin for Kibana 5
 
 ![Kibana Vector Map](vectormap.png)
 
 ### Requirements
-Kibana 4.3+
+Kibana 5.1.3
 
 ### Installation steps
-1. Download and unpack [Kibana](https://www.elastic.co/downloads/kibana).
-2. From the Kibana root directory, install the plugin with the following command:
-
-```$ bin/kibana plugin -i vectormap -u https://github.com/stormpython/vectormap/archive/master.zip```
+1. Download Kibana
+1. EITHER copy this repo into Kibana's plugin directory and run `npm start` from Kibana's root directory OR copy this repo into Kibana's parent directory and run `npm start` from this plugin's root directory
 
 ### Disclosure
-This repo is in its early stages.
-
-This repo contains source code minified from the original source code [jvectormap](https://github.com/bjornd/jvectormap), which is licensed under [AGPL](https://github.com/bjornd/jvectormap/blob/master/LICENSE-AGPL).
-
-### Issues
-Please file issues [here](https://github.com/stormpython/vectormap/issues).
+This repo is copied from [stormpython/vectormap](https://github.com/stormpython/vectormap) and contains source code minified from the original source code [jvectormap](https://github.com/bjornd/jvectormap), which is licensed under [AGPL](https://github.com/bjornd/jvectormap/blob/master/LICENSE-AGPL).
