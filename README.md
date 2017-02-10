@@ -4,7 +4,7 @@ A Vector Map Plugin for Kibana 5
 ![Kibana Vector Map](vectormap.png)
 
 ### Requirements
-Kibana 5.1.3
+Kibana 5.2.0
 
 ### Installation steps
 1. Download Kibana
