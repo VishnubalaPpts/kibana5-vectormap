@@ -9,7 +9,7 @@ module.controller('VectormapController', function ($scope) {
       return;
     }
 
-    var geoCodeAggId = _.first(_.pluck($scope.vis.aggs.bySchemaName['segment'], 'id'));
+    var geoCodeAggId = _.first(_.map($scope.vis.aggs.bySchemaName['segment'], 'id'));
     var metricsAgg = _.first($scope.vis.aggs.bySchemaName['metric']);
     var buckets = resp.aggregations[geoCodeAggId] && resp.aggregations[geoCodeAggId].buckets;
 
