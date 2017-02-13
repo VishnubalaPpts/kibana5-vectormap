@@ -4,4 +4,4 @@ export default function (kibana) {
       visTypes: ['plugins/vectormap/vectormap']
     }
   });
-};
+}
