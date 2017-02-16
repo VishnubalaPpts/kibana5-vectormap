@@ -1,5 +1,6 @@
 {
   "name": "vectormap",
+  "package-name": "vectormap",
   "version": "0.1.0",
   "main": "index.js",
   "kibana": {
@@ -28,5 +29,8 @@
     "mkdirp": "0.5.1",
     "path": "0.12.7",
     "rsync": "0.4.0"
+  },
+  "publishConfig": {
+    "registry": "https://dev-jerkins.5thcolumn.net:8081/repository/npm-internal/"
   }
 }
