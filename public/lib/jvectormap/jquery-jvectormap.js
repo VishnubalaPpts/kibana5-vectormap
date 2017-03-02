@@ -218,7 +218,8 @@ jvm.$ = jQuery, Array.prototype.indexOf || (Array.prototype.indexOf = function(s
 }, jvm.inherits(jvm.SVGCanvasElement, jvm.SVGElement), jvm.mixin(jvm.SVGCanvasElement, jvm.AbstractCanvasElement), jvm.SVGCanvasElement.prototype.setSize = function(width, height) {
     this.width = width, this.height = height, this.node.setAttribute("width", width), this.node.setAttribute("height", height)
 }, jvm.SVGCanvasElement.prototype.applyTransformParams = function(scale, transX, transY) {
-    this.scale = scale, this.transX = transX, this.transY = transY, this.rootElement.node.setAttribute("transform", "scale(" + scale + ") translate(" + transX + ", " + transY + ")")
+    this.scale = scale, this.transX = transX, this.transY = transY
+    if(isFinite(transX) && isFinite(transY) && isFinite(scale)){this.rootElement.node.setAttribute("transform", "scale(" + scale + ") translate(" + transX + ", " + transY + ")");}
 }, jvm.SVGShapeElement = function(name, config) {
     jvm.SVGShapeElement.parentClass.call(this, name, config), jvm.AbstractShapeElement.apply(this, arguments)
 }, jvm.inherits(jvm.SVGShapeElement, jvm.SVGElement), jvm.mixin(jvm.SVGShapeElement, jvm.AbstractShapeElement), jvm.SVGShapeElement.prototype.applyAttr = function(attr, value) {

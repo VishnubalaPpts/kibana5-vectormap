@@ -3,7 +3,7 @@ var $ = require('jquery');
 var numeral = require('numeral');
 
 // jvectormap - version 2.0.3
-require('plugins/vectormap/lib/jvectormap/jquery-jvectormap.min');
+require('plugins/vectormap/lib/jvectormap/jquery-jvectormap');
 require('plugins/vectormap/lib/jvectormap/jquery-jvectormap.css');
 
 var module = require('ui/modules').get('vectormap');
@@ -30,7 +30,7 @@ module.directive('vectormap', function () {
     }
 
     scope.$watch('data',function(){
-      render();
+      if (scope.data != null) {render();}
     });
 
     scope.$watch('options',function(){
