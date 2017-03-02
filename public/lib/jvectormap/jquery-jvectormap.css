@@ -12,14 +12,8 @@ svg {
 
 .jvectormap-tip {
     position: absolute;
-    display: none;
-    border: solid 1px #CDCDCD;
-    border-radius: 3px;
-    background: #292929;
-    color: white;
-    font-family: sans-serif, Verdana;
-    font-size: smaller;
-    padding: 3px;
+    border: solid 1px red;
+    color: red;
 }
 
 .jvectormap-zoomin, .jvectormap-zoomout, .jvectormap-goback {
