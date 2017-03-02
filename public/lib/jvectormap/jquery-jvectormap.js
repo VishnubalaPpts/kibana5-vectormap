@@ -803,8 +803,10 @@ jvm.$ = jQuery, Array.prototype.indexOf || (Array.prototype.indexOf = function(s
     var map = this;
     $(".jvectormap-tip").remove()
     this.tip = jvm.$("<div/>").addClass("jvectormap-tip").appendTo(jvm.$(".jvectormap-vis")), this.container.mousemove(function(e) {
-      var left = e.pageX - 300 - map.tipWidth,
+      var left = e.pageX - 350 - map.tipWidth,
         top = e.pageY - 15 - map.tipHeight;
+      left = (left + map.tipWidth > $(".jvectormap-container").width()) ? left - 200 : left;
+      top = (top + map.tipHeight > $(".jvectormap-container").height()) ? top - 50 : top;
       5 > left && (left = e.pageX + 15), 5 > top && (top = e.pageY + 15), map.tip.css({
         left: left,
         top: top
