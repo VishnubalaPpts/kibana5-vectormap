@@ -12,14 +12,10 @@ svg {
 
 .jvectormap-tip {
     position: absolute;
-    display: none;
-    border: solid 1px #CDCDCD;
-    border-radius: 3px;
-    background: #292929;
-    color: white;
-    font-family: sans-serif, Verdana;
-    font-size: smaller;
-    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 10;
 }
 
 .jvectormap-zoomin, .jvectormap-zoomout, .jvectormap-goback {
@@ -132,4 +128,41 @@ svg {
     vertical-align: middle;
     line-height: 20px;
     padding-left: 3px;
+}
+
+.tooltipContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.2em;
+    border: 1px solid @5c-charcoal;
+    white-space:nowrap;
+    overflow: hidden;
+}
+
+.tooltipInfoContainer {
+    color: @5c-silver;
+    display: flex;
+    /*height: 25px;*/
+    flex-shrink: 0;
+    flex: 1;
+    align-items: center;
+    background-color: @5c-rain;
+    padding: 0.25em;
+    &:nth-child(even) {
+        background-color: @5c-rain-dark;
+    }
+    &:first-of-type {
+        border-radius: 0.1em 0.1em 0 0;
+    }
+    &:last-of-type {
+        border-radius: 0 0 0.1em 0.1em;
+    }
+}
+
+.tooltipPropertyValue {
+    display: inline-block;
+    flex: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 0.5em 0 0.5em;
 }

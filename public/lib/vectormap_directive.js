@@ -3,7 +3,7 @@ var $ = require('jquery');
 var numeral = require('numeral');
 
 // jvectormap - version 2.0.3
-require('plugins/vectormap/lib/jvectormap/jquery-jvectormap.min');
+require('plugins/vectormap/lib/jvectormap/jquery-jvectormap');
 require('plugins/vectormap/lib/jvectormap/jquery-jvectormap.css');
 
 var module = require('ui/modules').get('vectormap');
@@ -30,7 +30,7 @@ module.directive('vectormap', function () {
     }
 
     scope.$watch('data',function(){
-      render();
+      if (scope.data != null) {render();}
     });
 
     scope.$watch('options',function(){
@@ -74,7 +74,9 @@ module.directive('vectormap', function () {
             if (!scope.data) { return; }
 
             var count = _.isUndefined(scope.data[code]) ? 0 : scope.data[code];
-            el.html(el.html() + ": " + numeral(count).format(displayFormat(scope.options.tipNumberFormat)));
+            var regionVal = numeral(count).format(displayFormat(scope.options.tipNumberFormat));
+            var currProperty = el.find(".tooltipPropertyValue").text()
+            el.find(".tooltipPropertyValue").text(currProperty + ": " + regionVal)
           }
         });
       });
