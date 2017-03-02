@@ -74,7 +74,9 @@ module.directive('vectormap', function () {
             if (!scope.data) { return; }
 
             var count = _.isUndefined(scope.data[code]) ? 0 : scope.data[code];
-            el.html(el.html() + ": " + numeral(count).format(displayFormat(scope.options.tipNumberFormat)));
+            var regionVal = numeral(count).format(displayFormat(scope.options.tipNumberFormat));
+            var currProperty = el.find(".tooltipPropertyValue").text()
+            el.find(".tooltipPropertyValue").text(currProperty + ": " + regionVal)
           }
         });
       });
