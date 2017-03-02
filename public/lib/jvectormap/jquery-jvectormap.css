@@ -15,6 +15,7 @@ svg {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    z-index: 10;
 }
 
 .jvectormap-zoomin, .jvectormap-zoomout, .jvectormap-goback {

@@ -802,11 +802,15 @@ jvm.$ = jQuery, Array.prototype.indexOf || (Array.prototype.indexOf = function(s
   createTip: function() {
     var map = this;
     $(".jvectormap-tip").remove()
-    this.tip = jvm.$("<div/>").addClass("jvectormap-tip").appendTo(jvm.$(".jvectormap-vis")), this.container.mousemove(function(e) {
-      var left = e.pageX - 350 - map.tipWidth,
+    this.tip = jvm.$("<div/>").addClass("jvectormap-tip").appendTo(jvm.$("body")), this.container.mousemove(function(e) {
+      var mapWidth = $(".jvectormap-container").width();
+      var mapHeight = $(".jvectormap-container").height();
+
+      var left = e.pageX - map.tipWidth,
         top = e.pageY - 15 - map.tipHeight;
-      left = (left + map.tipWidth > $(".jvectormap-container").width()) ? left - 200 : left;
-      top = (top + map.tipHeight > $(".jvectormap-container").height()) ? top - 50 : top;
+
+      left = (left + map.tipWidth > window.innerWidth) ? left - map.tipWidth : left;
+      top = (top + map.tipHeight > window.innerWidth) ? top - map.tipHeight : top;
       5 > left && (left = e.pageX + 15), 5 > top && (top = e.pageY + 15), map.tip.css({
         left: left,
         top: top
