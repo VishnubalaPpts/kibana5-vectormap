@@ -131,38 +131,38 @@ svg {
 }
 
 .tooltipContainer {
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.2em;
-    border: 1px solid @5c-charcoal;
-    white-space:nowrap;
-    overflow: hidden;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 0.2em !important;
+    border: 1px solid @5c-charcoal !important;
+    white-space:nowrap !important;
+    overflow: hidden !important;
 }
 
 .tooltipInfoContainer {
-    color: @5c-silver;
-    display: flex;
+    color: @5c-silver !important;
+    display: flex !important;
     /*height: 25px;*/
-    flex-shrink: 0;
-    flex: 1;
-    align-items: center;
-    background-color: @5c-rain;
-    padding: 0.25em;
+    flex-shrink: 0 !important;
+    flex: 1 !important;
+    align-items: center !important;
+    background-color: @5c-rain !important;
+    padding: 0.25em !important;
     &:nth-child(even) {
-        background-color: @5c-rain-dark;
+        background-color: @5c-rain-dark !important;
     }
     &:first-of-type {
-        border-radius: 0.1em 0.1em 0 0;
+        border-radius: 0.1em 0.1em 0 0 !important;
     }
     &:last-of-type {
-        border-radius: 0 0 0.1em 0.1em;
+        border-radius: 0 0 0.1em 0.1em !important;
     }
 }
 
 .tooltipPropertyValue {
-    display: inline-block;
-    flex: 1;
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding: 0 0.5em 0 0.5em;
+    display: inline-block !important;
+    flex: 1 !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    padding: 0 0.5em 0 0.5em !important;
 }
