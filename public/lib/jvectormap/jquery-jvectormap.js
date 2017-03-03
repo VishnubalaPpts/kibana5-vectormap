@@ -801,7 +801,11 @@ jvm.$ = jQuery, Array.prototype.indexOf || (Array.prototype.indexOf = function(s
   },
   createTip: function() {
     var map = this;
-    $(".jvectormap-tip").remove()
+
+
+// TODO: REMOVE TOOLTIPS WITH EMPTY TEXT
+
+    // $(".jvectormap-tip").remove()
     this.tip = jvm.$("<div/>").addClass("jvectormap-tip").appendTo(jvm.$("body")), this.container.mousemove(function(e) {
       var mapWidth = $(".jvectormap-container").width();
       var mapHeight = $(".jvectormap-container").height();
