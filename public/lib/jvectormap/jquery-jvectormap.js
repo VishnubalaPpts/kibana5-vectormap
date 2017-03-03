@@ -800,21 +800,15 @@ jvm.$ = jQuery, Array.prototype.indexOf || (Array.prototype.indexOf = function(s
     })
   },
   createTip: function() {
+    // TODO: fix endless tooltip appending problem
     var map = this;
-
-
-// TODO: REMOVE TOOLTIPS WITH EMPTY TEXT
-
-    // $(".jvectormap-tip").remove()
     this.tip = jvm.$("<div/>").addClass("jvectormap-tip").appendTo(jvm.$("body")), this.container.mousemove(function(e) {
       var mapWidth = $(".jvectormap-container").width();
       var mapHeight = $(".jvectormap-container").height();
-
       var left = e.pageX - map.tipWidth,
         top = e.pageY - 15 - map.tipHeight;
-
       left = (left + map.tipWidth > window.innerWidth) ? left - map.tipWidth : left;
-      top = (top + map.tipHeight > window.innerWidth) ? top - map.tipHeight : top;
+      top = (top + map.tipHeight > window.innerHeight) ? top - map.tipHeight : top;
       5 > left && (left = e.pageX + 15), 5 > top && (top = e.pageY + 15), map.tip.css({
         left: left,
         top: top
