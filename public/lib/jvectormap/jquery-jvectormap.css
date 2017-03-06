@@ -134,29 +134,19 @@ svg {
     display: flex;
     flex-direction: column;
     border-radius: 0.2em;
-    border: 1px solid @5c-charcoal;
+    border: 1px solid #1A1C2A;
     white-space:nowrap;
     overflow: hidden;
 }
 
 .tooltipInfoContainer {
-    color: @5c-silver;
+    color: #FEFEFE;
     display: flex;
-    /*height: 25px;*/
     flex-shrink: 0;
     flex: 1;
     align-items: center;
-    background-color: @5c-rain;
+    background-color: #343443;
     padding: 0.25em;
-    &:nth-child(even) {
-        background-color: @5c-rain-dark;
-    }
-    &:first-of-type {
-        border-radius: 0.1em 0.1em 0 0;
-    }
-    &:last-of-type {
-        border-radius: 0 0 0.1em 0.1em;
-    }
 }
 
 .tooltipPropertyValue {
