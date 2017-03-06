@@ -804,11 +804,13 @@ jvm.$ = jQuery, Array.prototype.indexOf || (Array.prototype.indexOf = function(s
     var mapContainer = map.container[0]
     this.tip = jvm.$("<div/>").addClass("jvectormap-tip").appendTo(jvm.$(mapContainer)), this.container.mousemove(function(e) {
       var mapDimensions = mapContainer.getBoundingClientRect();
-      var tipX = e.pageX - mapDimensions.left + 15;
-      var tipY = e.pageY - mapDimensions.top + 15;
+      var eventXRelToScroll = e.pageX - window.scrollX;
+      var eventYRelToScroll = e.pageY - window.scrollY;
+      var tipX = eventXRelToScroll - mapDimensions.left + 15;
+      var tipY = eventYRelToScroll - mapDimensions.top + 15;
       // prevent collision
-      tipX = (e.pageX + map.tipWidth > mapDimensions.right) ? tipX - map.tipWidth - 15 : tipX;
-      tipY = (e.pageY + map.tipHeight + 10 > mapDimensions.bottom) ? tipY - map.tipHeight - 15 : tipY;
+      tipX = (eventXRelToScroll + map.tipWidth > mapDimensions.right) ? tipX - map.tipWidth - 15 : tipX;
+      tipY = (eventYRelToScroll + map.tipHeight + 10 > mapDimensions.bottom) ? tipY - map.tipHeight - 15 : tipY;
       map.tip.css({
         left: tipX,
         top: tipY
