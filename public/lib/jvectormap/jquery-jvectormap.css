@@ -147,12 +147,6 @@ svg {
     align-items: center;
     background-color: #343443;
     padding: 0.25em;
-    &:first-of-type {
-        border-radius: 0.1em 0.1em 0 0;
-    }
-    &:last-of-type {
-        border-radius: 0 0 0.1em 0.1em;
-    }
 }
 
 .tooltipPropertyValue {
