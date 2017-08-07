@@ -1,10 +1,16 @@
-require('plugins/vectormap/vectormap.less');
-require('plugins/vectormap/lib/vectormap_controller.js');
-require('plugins/vectormap/lib/vectormap_directive.js');
+import 'plugins/vectormap/vectormap.less';
+import 'plugins/vectormap/lib/vectormap_controller.js';
+import 'plugins/vectormap/lib/vectormap_directive.js';
+
+import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
+import { TemplateVisTypeProvider } from 'ui/template_vis_type/template_vis_type';
+import { VisSchemasProvider } from 'ui/vis/schemas';
+
+VisTypesRegistryProvider.register(VectormapProvider);
 
 function VectormapProvider(Private) {
-  var TemplateVisType = Private(require('ui/template_vis_type/template_vis_type'));
-  var Schemas = Private(require('ui/vis/schemas'));
+  const TemplateVisType = Private(TemplateVisTypeProvider);
+  const Schemas = Private(VisSchemasProvider);
 
   return new TemplateVisType({
     name: 'vectormap',
@@ -48,5 +54,3 @@ function VectormapProvider(Private) {
     ])
   });
 }
-
-require('ui/registry/vis_types').register(VectormapProvider);
